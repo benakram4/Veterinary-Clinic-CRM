@@ -1,0 +1,86 @@
+void sortDats(struct ClinicData data, int counter)
+{
+    int i, j, k;
+
+    for ( i = 0; i < counter; i++)
+    {
+        for ( j = 0; j <= i; j++)
+        {
+            if(data.appointments[j].date.year > data.appointments[i].date.year)
+            {
+                k = data.appointments[j].date.year;
+
+                data.appointments[j].date.year = data.appointments[i].date.year;
+
+                data.appointments[i].date.year = k;
+
+                k = data.appointments[j].date.month;
+
+                data.appointments[j].date.month = data.appointments[i].date.month;
+
+                data.appointments[i].date.month = k;
+
+                k = data.appointments[j].date.day;
+
+                data.appointments[j].date.day = data.appointments[i].date.day;
+
+                data.appointments[i].date.day = k;
+
+            }
+
+            else
+            {
+                if (data.appointments[j].date.year == data.appointments[i].date.year)
+                {
+                    if (data.appointments[j].date.month > data.appointments[i].date.month)
+                    {
+                        k = data.appointments[j].date.year;
+
+                        data.appointments[j].date.year = data.appointments[i].date.year;
+
+                        data.appointments[i].date.year = k;
+
+                        k = data.appointments[j].date.month;
+
+                        data.appointments[j].date.month = data.appointments[i].date.month;
+
+                        data.appointments[i].date.month = k;
+
+                        k = data.appointments[j].date.day;
+
+                        data.appointments[j].date.day = data.appointments[i].date.day;
+
+                        data.appointments[i].date.day = k;
+                    }
+                    else
+                    {
+                        if (data.appointments[j].date.month == data.appointments[i].date.month)
+                        {
+                            if (data.appointments[j].date.day > data.appointments[i].date.day)
+                            {
+                                k = data.appointments[j].date.year;
+
+                                data.appointments[j].date.year = data.appointments[i].date.year;
+
+                                data.appointments[i].date.year = k;
+
+                                k = data.appointments[j].date.month;
+
+                                data.appointments[j].date.month = data.appointments[i].date.month;
+
+                                data.appointments[i].date.month = k;
+
+                                k = data.appointments[j].date.day;
+
+                                data.appointments[j].date.day = data.appointments[i].date.day;
+
+                                data.appointments[i].date.day = k;
+                            }
+                        }
+
+                    }
+                }
+            }                                                          
+        }
+    }
+}
